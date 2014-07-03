@@ -3,9 +3,43 @@
 <html ng-app="geektic">
     <head>
         <title>Geektic</title>
+         <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
     <body ng-controller="HelloCtrl">
-        <h1>{{ helloMessage.message }}</h1>
+
+        <div>
+       	 <h1 class = "text-center"><center>GEEKTIC</center></h1>
+       	 <p class = "text-center"><center><b>Tu cliques tu neek</b></center></p>
+        </div>
+        
+          <div style="width:40%; margin:auto; padding: 15px;;border: solid 5px; border-radius: 15px;">
+                  <h4 class = "text-center"><center>I'm looking for</center></h4>
+                  <center>
+                  <table border="1">
+                  <tr>  
+                 	 <td>                
+                  		 <input ng-model="sexe" type="radio" name="radioSex" value="M" checked = "checked" >&nbsp;A man 
+                 	</td>
+                  </tr> 
+                  <tr>  
+                 	 <td>       
+                 		  <input ng-model="sexe" type="radio" name="radioSex" value="F" >&nbsp;A woman        
+                 	</td>
+                  </tr> 
+                  <tr>  
+                 	 <td>  
+                 		  <input ng-model="sexe" type="radio" name="radioSex" value="X" disabled>&nbsp;Why the fuck i'm here     
+                 	</td>
+                 </tr> 
+                   </table>
+                   </center>
+                  <h4 class = "text-center"><center>who like:</center></h4>        
+                    <center><select style="margin-top: 10px;" ng-model="interet" placeholder="selction" >
+                    <option value="">Centre d'interêt</option></center>
+                 </select>  
+          </div> 
+          
+          <button class="btn btn-large btn-block btn-primary" style="width: 15%; margin:auto; margin-top:20px;" ng-click="recherche()">FIND</button>
 
         <script src="/js/angular.js"></script>
         <script src="/js/angular-route.js"></script>
