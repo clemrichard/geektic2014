@@ -4,17 +4,19 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.ninja_squad.geektic.metier.Geek;
 
+@Repository
 public class GeekDAO {
 
+	@PersistenceContext
 	private EntityManager em;
-
-	public GeekDAO(EntityManager em) {
-		this.em = em;
-	}
 
 	public List<Geek> findAll() {
 		String jpq1 = "select v from Geek as v";
@@ -29,16 +31,16 @@ public class GeekDAO {
 	}
 
 	public List<Geek> findByNom(String chaine) {
-		String jpql = "select s from Geek s where s.nom = :nom";
+		String jpql = "select s from Geek s where s.nom = :chaine";
 		TypedQuery<Geek> query = em.createQuery(jpql, Geek.class);
-		query.setParameter("artiste", chaine);
+		query.setParameter("nom", chaine);
 		return query.getResultList();
 	}
 
-	public void persist(Geek _spe) {
+	public void persist(Geek geek) {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		em.persist(_spe);
+		em.persist(geek);
 		tx.commit();
 	}
 

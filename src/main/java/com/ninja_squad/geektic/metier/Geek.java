@@ -71,6 +71,10 @@ public class Geek {
 		this.email = email;
 	}
 	
+	protected Geek()
+	{
+		
+	}
 
 	public Geek(String nom, String prenom, String sexe, String age, String email) {
 		super();

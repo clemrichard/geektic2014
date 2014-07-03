@@ -1,0 +1,3 @@
+14:52:44,178 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_1_, geek0_.age as age2_1_, geek0_.email as email3_1_, geek0_.nom as nom4_1_, geek0_.prenom as prenom5_1_, geek0_.sexe as sexe6_1_ from geek geek0_
+14:57:31,212 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_1_, geek0_.age as age2_1_, geek0_.email as email3_1_, geek0_.nom as nom4_1_, geek0_.prenom as prenom5_1_, geek0_.sexe as sexe6_1_ from geek geek0_
+14:58:02,098 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_1_, geek0_.age as age2_1_, geek0_.email as email3_1_, geek0_.nom as nom4_1_, geek0_.prenom as prenom5_1_, geek0_.sexe as sexe6_1_ from geek geek0_
