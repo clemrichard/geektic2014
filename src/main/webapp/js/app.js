@@ -5,3 +5,23 @@ app.controller('HelloCtrl', function($scope, $http) {
         $scope.helloMessage = helloMessage;
     });
 });
+
+app.controller('GeekCtrl', function($scope, $http) {     
+    $scope.remplircombo = function()
+    {
+    	   $http.get('/sawgeeks/combo').success(function(listeInterets) {
+
+           $scope.interets = listeInterets;
+    	   });
+    }	   
+    $scope.remplircombo();
+    
+    $scope.findGeeksByInterest = function()
+    {
+    	$http.get('/sawgeeks/seek/'+$scope.sexe+'/'+$scope.interet.nom).success(function(listeGeeks){
+    		$scope.geeksByInterest = listeGeeks;
+    	});
+    };
+    
+    
+  });

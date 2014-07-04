@@ -87,12 +87,9 @@ public class Geek {
 	
     @ManyToMany
 
-    @JoinTable(name = "INTERET",
-
+    @JoinTable(name = "GEEK_INTERET",
                joinColumns = @JoinColumn(name = "ID_GEEK"),
-
                inverseJoinColumns = @JoinColumn(name = "ID_INTERET"))
-
-    private List <Interet> Interet;
+    public List <Interet> interets;
 
 }

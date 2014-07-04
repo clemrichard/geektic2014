@@ -47,6 +47,11 @@ public class Interet {
 		this.nom = nom;
 		this.denomination = denomination;
 	}
+	
+	protected Interet()
+	{
+	
+	}
 
 
 }

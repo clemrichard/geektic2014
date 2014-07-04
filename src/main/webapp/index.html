@@ -5,25 +5,25 @@
         <title>Geektic</title>
          <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
-    <body ng-controller="HelloCtrl">
+    <body ng-controller="GeekCtrl">
 
         <div>
        	 <h1 class = "text-center"><center>GEEKTIC</center></h1>
        	 <p class = "text-center"><center><b>Tu cliques tu neek</b></center></p>
         </div>
         
-          <div style="width:40%; margin:auto; padding: 15px;;border: solid 5px; border-radius: 15px;">
+          <div style="width:40%; margin:auto; padding: 15px;border: solid 5px; border-radius: 15px;">
                   <h4 class = "text-center"><center>I'm looking for</center></h4>
                   <center>
                   <table border="1">
                   <tr>  
                  	 <td>                
-                  		 <input ng-model="sexe" type="radio" name="radioSex" value="M" checked = "checked" >&nbsp;A man 
+                  		 <input ng-model="sexe" type="radio" name="radioSex" value="HOMME" checked = "checked" >&nbsp;A man 
                  	</td>
                   </tr> 
                   <tr>  
                  	 <td>       
-                 		  <input ng-model="sexe" type="radio" name="radioSex" value="F" >&nbsp;A woman        
+                 		  <input ng-model="sexe" type="radio" name="radioSex" value="FEMME" >&nbsp;A woman        
                  	</td>
                   </tr> 
                   <tr>  
@@ -34,13 +34,22 @@
                    </table>
                    </center>
                   <h4 class = "text-center"><center>who like:</center></h4>        
-                    <center><select style="margin-top: 10px;" ng-model="interet" placeholder="selction" >
-                    <option value="">Centre d'interêt</option></center>
+                    <center><select style="margin-top: 10px;" ng-model="interet"  ng-options="interet.nom for interet in interets" >
+                    <option value="" disabled></option></center>
                  </select>  
           </div> 
           
-          <button class="btn btn-large btn-block btn-primary" style="width: 15%; margin:auto; margin-top:20px;" ng-click="recherche()">FIND</button>
+          <button class="btn btn-large btn-block btn-primary" style="width: 15%; margin:auto; margin-top:20px;" ng-click="findGeeksByInterest()">FIND</button>
 
+             <div style="margin: 20px 50px; border: solid 1px black; float: left; background-color: #F2F2F2; border-radius: 10px;" >
+                     <div style="margin: auto; width: 400px;  border-radius: 10px; padding: 10px;" ng-repeat="geek in geeksByInterest">                                          
+                             <p class="text-info">{{ geek.prenom }} {{ geek.nom }}</p>        
+                             <p> Age: {{geek.age}} ans. </p>
+                             <p> mail: {{geek.email}}</p>
+                             <p> Centres d'interêt: </p>        
+                     
+                     </div>
+                </div>
         <script src="/js/angular.js"></script>
         <script src="/js/angular-route.js"></script>
         <script src="/js/app.js"></script>
