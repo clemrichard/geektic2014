@@ -25,3 +25,22 @@ app.controller('GeekCtrl', function($scope, $http) {
     
     
   });
+
+app.controller('ShowCtrl', function($scope, $http, $routeParams) {
+	$http.get('/sawgeeks/showgeek/'+ $routeParams.id).success(function(geek){
+		$scope.geek = geek;
+	});
+});
+
+app.config(function($routeProvider){
+	$routeProvider
+	    .when('/', {
+	        templateUrl: '/view/main.html',
+	        controller: 'GeekCtrl'
+	    })
+	    .when('/showgeek/:id', {
+	        templateUrl: '/view/showgeek.html',
+	        controller: 'ShowCtrl'
+	    })
+	    .otherwise('/');
+	});

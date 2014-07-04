@@ -32,10 +32,12 @@ public class GeekService {
 
     }
     
-    @RequestMapping("/seek/{sexe}/{interet}")
-    public List<Geek>findGeeksByInterest (@PathVariable("sexe") String  sexe, @PathVariable("interet") String  interet){
-    	List<Geek> listeGeeks = geekDao.findGeekByInterest(sexe, interet);
-        return listeGeeks;
+
+    
+    @RequestMapping("/showgeek/{id}")
+    public Geek findGeeksById (@PathVariable("id") Long  id){
+    	Geek mongeek = geekDao.findById(id);
+        return mongeek;
     }
     
     @RequestMapping("/combo")
@@ -44,6 +46,10 @@ public class GeekService {
         return geekDao.findInterets();
     }
     
-    
+    @RequestMapping("/seek/{sexe}/{interet}")
+    public List<Geek>findGeeksByInterest (@PathVariable("sexe") String  sexe, @PathVariable("interet") String  interet){
+    	List<Geek> listeGeeks = geekDao.findGeekByInterest(sexe, interet);
+        return listeGeeks;
+    }
 
 }

@@ -26,10 +26,11 @@ public class GeekDAO {
 		return listeGeek;
 	}
 
-	public Geek findyId(long id) {
+	public Geek findById(long id) {
 		return em.find(Geek.class, id);
 
 	}
+	
 
 	public List<Geek> findByNom(String chaine) {
 		String jpql = "select g from Geek as g where g.nom = :chaine";
