@@ -33,7 +33,7 @@ public class GeekDAO {
 	
 
 	public List<Geek> findByNom(String chaine) {
-		String jpql = "select g from Geek as g where g.nom = :chaine";
+		String jpql = "select g from Geek as g where g.nom = :nom";
 		TypedQuery<Geek> query = em.createQuery(jpql, Geek.class);
 		query.setParameter("nom", chaine);
 		return query.getResultList();

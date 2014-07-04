@@ -32,8 +32,8 @@
           
           <button class="btn btn-large btn-block btn-primary" style="width: 15%; margin:auto; margin-top:20px;" ng-click="findGeeksByInterest()">FIND</button>
 
-             <div style="margin: 20px 50px; border: solid 1px black; float: left; background-color: #F2F2F2; border-radius: 10px;" >
-                     <div style="margin: auto; width: 400px;  border-radius: 10px; padding: 10px;" ng-repeat="geek in geeksByInterest">                                          
+         <center>   <div style="width:40%; margin:auto; padding: 15px;border: solid 5px; border-radius: 15px;" >
+                    	 <div style="margin: auto; width: 400px;  border-radius: 10px; padding: 10px;" ng-repeat="geek in geeksByInterest">                                          
                              <a ng-href="#/showgeek/{{geek.id}}">{{ geek.prenom }} {{ geek.nom }}    Age: {{geek.age}} </a>                           
                      </div>
-                </div>
+                </div> </center>

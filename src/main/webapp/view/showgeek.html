@@ -1,12 +1,17 @@
 
-	 <div style="margin: 20px 50px; border: solid 1px black; float: left; background-color: #F2F2F2; border-radius: 10px;" >
+	 <div style="width:40%; margin:auto; padding: 15px;border: solid 5px; border-radius: 15px;" >
 	                     <div style="margin: auto; width: 400px;  border-radius: 10px; padding: 10px;" >                                          
 	                             <p class="text-info">{{ geek.prenom }} {{ geek.nom }}</p>        
 	                             <p> Age: {{geek.age}} ans. </p>
 	                             <p> mail: {{geek.mail}}</p>
-	                             <p> Centres d'interêt: </p>        
+	                             <p> Centres d'interêt: </p>    
+	                                <ul>                     
+                                     <li ng-repeat="interet in geek.interets">
+                                             {{ interet.nom }}
+                                     </li>        
+                             </ul>                          
 	                      
 	                     </div>
 	</div>
 
-test
+<center><a ng-href="/index.html">Accueil</a></center>
